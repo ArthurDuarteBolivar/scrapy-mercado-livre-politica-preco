@@ -20,6 +20,32 @@ options = webdriver.ChromeOptions()
 titulo_arquivo = ""
 # options.add_argument("--headless=new")
 
+import mysql.connector
+
+# Conecte ao banco de dados
+conn = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='Art$2007',
+    database='politica'
+)
+cursor = conn.cursor()
+
+# Nome da tabela que você deseja limpar
+table_name = 'produtos_ml'
+
+# Execute o comando para deletar todos os dados
+cursor.execute(f'DELETE FROM {table_name}')
+
+# Confirme as mudanças
+conn.commit()
+
+# Feche a conexão
+conn.close()
+
+print(f'Todos os dados da tabela {table_name} foram deletados.')
+
+
 options.add_argument("--disable-gpu")
 options.add_argument("--disable-extensions")
 prefs = {"profile.managed_default_content_settings.images": 2}
