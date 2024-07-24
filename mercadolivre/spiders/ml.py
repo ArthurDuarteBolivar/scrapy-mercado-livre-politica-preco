@@ -5,11 +5,11 @@ import scrapy
 import requests
 from docx import Document
 import pandas
+from datetime import datetime
 
 start_row = 20  
 end_row = 33
 num_rows = end_row - start_row
-
 
 df = pandas.read_excel("GESTÃO DE AÇÕES E-COMMERCE.xlsx", usecols='C:K', skiprows=start_row, nrows=num_rows, engine='openpyxl')
 
@@ -18,57 +18,57 @@ df.columns = ['PRODUTO', 'SITE', 'COLUNA3', 'CLÁSSICO ML', 'COLUNA5', 'PREMIUM 
 
 for index, i in df.iterrows():
     if i['PRODUTO'] == "FONTE 40A":
-        fonte40Marketplace = round(i['COLUNA3'], 2);
-        fonte40Classico = round(i['COLUNA5'], 2);
-        fonte40Premium = round(i['COLUNA7'], 2);
+        fonte40Marketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte40Classico = round(i['COLUNA5'], 2) - 0.5;
+        fonte40Premium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 60A":
-        fonte60Marketplace = round(i['COLUNA3'], 2);
-        fonte60Classico = round(i['COLUNA5'], 2);
-        fonte60Premium = round(i['COLUNA7'], 2);
+        fonte60Marketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte60Classico = round(i['COLUNA5'], 2) - 0.5;
+        fonte60Premium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 60A LITE":
-        fonte60liteMarketplace = round(i['COLUNA3'], 2);
-        fonte60liteClassico = round(i['COLUNA5'], 2);
-        fonte60litePremium = round(i['COLUNA7'], 2);
+        fonte60liteMarketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte60liteClassico = round(i['COLUNA5'], 2) - 0.5;
+        fonte60litePremium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 70A":
-        fonte70Marketplace = round(i['COLUNA3'], 2);
-        fonte70Classico = round(i['COLUNA5'], 2);
-        fonte70Premium = round(i['COLUNA7'], 2);
+        fonte70Marketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte70Classico = round(i['COLUNA5'], 2) - 0.5;
+        fonte70Premium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 70A LITE":
-        fonte70liteMarketplace = round(i['COLUNA3'], 2);
-        fonte70liteClassico = round(i['COLUNA5'], 2);
-        fonte70litePremium = round(i['COLUNA7'], 2);
+        fonte70liteMarketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte70liteClassico = round(i['COLUNA5'], 2) - 0.5;
+        fonte70litePremium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 90 BOB":
-        fonte90bobMarketplace = round(i['COLUNA3'], 2);
-        fonte90bobClassico = round(i['COLUNA5'], 2);
-        fonte90bobPremium = round(i['COLUNA7'], 2);
+        fonte90bobMarketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte90bobClassico = round(i['COLUNA5'], 2) - 0.5;
+        fonte90bobPremium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 120 BOB":
-        fonte120bobMarketplace = round(i['COLUNA3'], 2);
-        fonte120bobClassico = round(i['COLUNA5'], 2);
-        fonte120bobPremium = round(i['COLUNA7'], 2);
+        fonte120bobMarketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte120bobClassico = round(i['COLUNA5'], 2) - 0.5;
+        fonte120bobPremium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 120A LITE":
-        fonte120liteMarketplace = round(i['COLUNA3'], 2);
-        fonte120liteClassico = round(i['COLUNA5'], 2);
-        fonte120litePremium = round(i['COLUNA7'], 2);
+        fonte120liteMarketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte120liteClassico = round(i['COLUNA5'], 2) - 0.5;
+        fonte120litePremium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 120A":
-        fonte120Marketplace = round(i['COLUNA3'], 2);
-        fonte120Classico = round(i['COLUNA5'], 2);
-        fonte120Premium = round(i['COLUNA7'], 2);
+        fonte120Marketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte120Classico = round(i['COLUNA5'], 2) - 0.5;
+        fonte120Premium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 200 BOB":
-        fonte200bobMarketplace = round(i['COLUNA3'], 2);
-        fonte200bobClassico = round(i['COLUNA5'], 2);
-        fonte200bobPremium = round(i['COLUNA7'], 2);
+        fonte200bobMarketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte200bobClassico = round(i['COLUNA5'], 2) - 0.5;
+        fonte200bobPremium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 200A LITE":
-        fonte200liteMarketplace = round(i['COLUNA3'], 2);
-        fonte200liteClassico = round(i['COLUNA5'], 2);
-        fonte200litePremium = round(i['COLUNA7'], 2);
+        fonte200liteMarketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte200liteClassico = round(i['COLUNA5'], 2) - 0.5;
+        fonte200litePremium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 200 MONO":
-        fonte200monoMarketplace = round(i['COLUNA3'], 2);
-        fonte200monoClassico = round(i['COLUNA5'], 2);
-        fonte200monoPremium = round(i['COLUNA7'], 2);
+        fonte200monoMarketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte200monoClassico = round(i['COLUNA5'], 2) - 0.5;
+        fonte200monoPremium = round(i['COLUNA7'], 2) - 0.5;
     elif i['PRODUTO'] == "FONTE 200A":
-        fonte200Marketplace = round(i['COLUNA3'], 2);
-        fonte200Classico = round(i['COLUNA5'], 2);
-        fonte200Premium = round(i['COLUNA7'], 2);
+        fonte200Marketplace = round(i['COLUNA3'], 2) - 0.5;
+        fonte200Classico = round(i['COLUNA5'], 2) - 0.5;
+        fonte200Premium = round(i['COLUNA7'], 2) - 0.5;
 
 # if os.path.exists("dados_scrapy.docx"):
 #     doc = Document("dados_scrapy.docx")
