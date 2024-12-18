@@ -1,9 +1,21 @@
-new_name = "Fonte Automotiva Jfa Storm Lite 70a Bivolt Carregador".lower()
+sites = ["https://www.radicalsom.com.br", "https://www.bestonline.com.br", "https://www.shoppratico.com.br", "https://www.renovonline.com.br", "https://www.lsdistribuidora.com.br"]
 
-if "bob" not in new_name and "lite" not in new_name and "light" not in new_name  and "controle" not in new_name and 'jfa' in new_name and "usina" not in new_name:
-    if "70a" in new_name or "70" in new_name or "70 amperes" in new_name or "70amperes" in new_name or "70 a" in new_name:
-        print(new_name)
+products = ['fonte-40a-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-60a-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-60a-lite-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-70a-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-70a-lite-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-90a-bob-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-120a-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-120a-lite-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-120a-bob-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-200a-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-200a-lite-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-200a-bob-jfa_OrderId_PRICE_NoIndex_True',
+            'fonte-200a-mono-jfa_OrderId_PRICE_NoIndex_True'
+            ]
+
+for i in sites:
+    for i in products:
         
-if "bob" not in new_name and  ("lite" in new_name or "light" in new_name) and "controle" not in new_name and 'jfa' in new_name and "usina" not in new_name:
-    if "70a" in new_name or "70" in new_name or "70 amperes" in new_name or "70amperes" in new_name or "70 a" in new_name:
-        print(new_name)
+       print(f'{sites}/{products}')

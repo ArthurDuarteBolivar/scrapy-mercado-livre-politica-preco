@@ -1,3 +1,4 @@
+import requests
 import re
 import docx
 import os
@@ -138,7 +139,6 @@ for item_path in os.listdir(r"dados/"):
 
     read_text(text)
 
-output_doc = docx.Document()
 for item in storm40:
     if item[1] not in lojas:
         lojas[item[1]] = []
@@ -192,8 +192,11 @@ for item in storm200:
         lojas[item[1]] = []
     lojas[item[1]].append((item[0], "FONTE 200A"))
 for i in lojas:
-    output_doc.add_paragraph().add_run(f"*{i}*\n").bold = True
+    dados = f"*{i}* \n"
     for item, modelo in lojas[i]:
-        output_doc.add_paragraph(f"{modelo} - {item}").paragraph_format.left_indent = Inches(0.5)
-        
-output_doc.save(r'dados_extraidos.docx')
+        dados =  dados + f"{modelo} - {item} \n"
+    requests.post("https://expertinvest.com.br/waha/api/sendText", {
+        "chatId": "120363026494101932@g.us",
+        "text": dados,
+        "session": "default"
+    })
